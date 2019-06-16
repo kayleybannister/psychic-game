@@ -16,6 +16,8 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
 
 // this links to the letters guessed in the index file
 var userText = document.getElementById("user-text");
+var winNumber = document.getElementById("wins");
+var lossNumber = document.getElementById("losses");
 
 //create an event so that the function is called to start the game
 //the below calls the function whenever a key that was pressed is released
@@ -24,8 +26,6 @@ document.onkeyup = function(event) {
     console.log("You are now in the main function");
 
     userText.textContent = event.key;
-
-
 
 
 }
