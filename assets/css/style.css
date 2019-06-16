@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkblue;
+    float: left;
+    padding: 50px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: larger;
+}
