@@ -18,6 +18,7 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
 var userText = document.getElementById("user-text");
 var winNumber = document.getElementById("wins");
 var lossNumber = document.getElementById("losses");
+var guessesRemaining = document.getElementById("guesses-left");
 
 //create an event so that the function is called to start the game
 //the below calls the function whenever a key that was pressed is released
@@ -29,3 +30,8 @@ document.onkeyup = function(event) {
 
 
 }
+
+
+// create a for loop that decrements the guesses remaining by 1 every time the user selects a letter
+// that did not match the computer's guess
+// for (var i = 9; i < guessesLeft; i--) { guessesRemaining; }
