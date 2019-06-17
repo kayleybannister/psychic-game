@@ -31,7 +31,7 @@ document.onkeyup = function(event) {
 
     var computerGuess = letters[Math.floor(Math.random() * letters.length)];
 
-    if (userText === computerGuess) {
+    if (userText == computerGuess) {
             wins++;
         }
         
