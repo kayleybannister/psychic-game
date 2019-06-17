@@ -29,19 +29,20 @@ document.onkeyup = function(event) {
 
     userText.textContent = event.key; 
 
-    computerChoice = letters[Math.floor(Math.random() * letters.length)];
+    var computerGuess = letters[Math.floor(Math.random() * letters.length)];
 
-    if (userText === computerChoice) {
+    if (userText === computerGuess) {
             wins++;
         }
         
         else {
-          losses++; 
+          losses++;
           guessesLeft--;
         }
 
     winNumber.textContent = "WINS: " + wins;
     lossNumber.textContent = "LOSSES: " + losses;
+    computerChoice.textContent = computerGuess;
 }
 
 
