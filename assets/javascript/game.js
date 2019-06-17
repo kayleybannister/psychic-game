@@ -43,9 +43,5 @@ document.onkeyup = function(event) {
     winNumber.textContent = "WINS: " + wins;
     lossNumber.textContent = "LOSSES: " + losses;
     computerChoice.textContent = computerGuess;
+    guessesRemaining.textContent = "Guesses Left: " + guessesLeft;
 }
-
-
-// create a for loop that decrements the guesses remaining by 1 every time the user selects a letter
-// that did not match the computer's guess
-// for (var i = 9; i < guessesLeft; i--) { guessesRemaining; }
