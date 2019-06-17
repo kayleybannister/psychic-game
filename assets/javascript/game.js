@@ -16,6 +16,7 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
 
 // this links to the letters guessed in the index file
 var userText = document.getElementById("user-text");
+var computerChoice = document.getElementById("computer-choice");
 var winNumber = document.getElementById("wins");
 var lossNumber = document.getElementById("losses");
 var guessesRemaining = document.getElementById("guesses-left");
@@ -26,9 +27,21 @@ document.onkeyup = function(event) {
 
     console.log("You are now in the main function");
 
-    userText.textContent = event.key;
+    userText.textContent = event.key; 
 
+    computerChoice = letters[Math.floor(Math.random() * letters.length)];
 
+    if (userText === computerChoice) {
+            wins++;
+        }
+        
+        else {
+          losses++; 
+          guessesLeft--;
+        }
+
+    winNumber.textContent = "WINS: " + wins;
+    lossNumber.textContent = "LOSSES: " + losses;
 }
 
 
