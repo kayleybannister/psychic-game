@@ -7,8 +7,8 @@ var lettersGuessed = [];
 
 //creating array for the letters that the computer can choose from
 var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
-                "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
-                "W", "X", "Y", "Z"];
+  "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
+  "W", "X", "Y", "Z"];
 
 
 //create variables that will hold the choices on the index html file on the div id's
@@ -23,25 +23,34 @@ var guessesRemaining = document.getElementById("guesses-left");
 
 //create an event so that the function is called to start the game
 //the below calls the function whenever a key that was pressed is released
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
+
+  if (event.keyCode > 59 && event.keyCode < 91) {
+
+  if (guessesLeft) {
 
     console.log("You are now in the main function");
 
-    userText.textContent = event.key; 
+    userText.append(event.key + ",");
 
     var computerGuess = letters[Math.floor(Math.random() * letters.length)];
 
     if (userText == computerGuess) {
-            wins++;
-        }
-        
-        else {
-          losses++;
-          guessesLeft--;
-        }
+      wins++;
+    } 
+    else {
+      losses++;
+      guessesLeft--;
+    };
 
+    if (!guessesLeft) {
+      guessesRemaining.textContent = "Guesses Left: " + guessesLeft;
+      alert("You have lost!");
+    };
     winNumber.textContent = "WINS: " + wins;
     lossNumber.textContent = "LOSSES: " + losses;
     computerChoice.textContent = computerGuess;
     guessesRemaining.textContent = "Guesses Left: " + guessesLeft;
-}
+  };
+};
+};
